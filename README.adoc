@@ -35,4 +35,4 @@ ifdef::env-github,env-browser[]
 :warning-caption: :warning:
 endif::[]
 
-= Manual do Estudante - CST em Sistemas para Internet
+= Progrmação Orientada a Objetos com Java
