@@ -31,7 +31,8 @@ Fagno Alves Fonseca <fagno.fonseca@ifto.edu.br>
 Mestre em Modelagem Computacional de Sistemas – UFT.
 
 1. link:ambiente-desenvolvimento/[Ambiente de Desenvolvimento]
-1. link:introducao/[Programação Orientada a Objetos]
+1. link:introducao/[Introdução]
+1. link:introducao/[Objeto e Classe]
 1. link:spring/[Relacionamento entre Classes]
 1. link:jpa/[Herança e Classes abstratas]
 1. link:validacao/[Encapsulamento]
