@@ -1,0 +1,328 @@
+:icons: font
+:allow-uri-read:
+//caminho padrão para imagens
+:imagesdir: ../images
+:numbered:
+:figure-caption: Figura
+:doctype: book
+
+//gera apresentacao
+//pode se baixar os arquivos e add no diretório
+:revealjsdir: https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0
+
+//Estilo do Sumário
+:toc2: 
+//após os : insere o texto que deseja ser visível
+:toc-title: Sumário
+:figure-caption: Figura
+//numerar titulos
+:numbered:
+:source-highlighter: highlightjs
+:icons: font
+:chapter-label:
+:doctype: book
+:lang: pt-BR
+//3+| mesclar linha tabela
+
+ifdef::env-github[:outfilesuffix: .adoc]
+
+ifdef::env-github,env-browser[]
+// Exibe ícones para os blocos como NOTE e IMPORTANT no GitHub
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+
+link:https://fagno.github.io/poo-java/[HOME]
+
+= Programação Orientada a Objetos
+
+Fagno Alves Fonseca <fagno.fonseca@ifto.edu.br>
+Mestre em Modelagem Computacional de Sistemas – UFT.
+
+== Objetos
+
+Objetos são a chave para se compreender a tecnologia orientada a objetos. Você olha ao seu redor e tudo o que vê são objetos: carro, mesa, janela, livro, pessoa, etc.
+
+.Fonte: (MELO, 2004)
+image::objetos.png[]
+
+Objetos possuem características próprias, as quais permitem categorizá-los e descrevê-los.
+
+Que características similares você identificaria nesses veículos?
+
+.Fonte: (MELO, 2004)
+image::objetos-carros.png[]
+
+Características similares:
+
+- Modelo
+- Cor
+- Fabricante
+- Ano de Fabricação
+- Placa
+- Número de Portas
+- Entre outros.
+
+Os objetos do mundo real têm duas características em comum: **ESTADO** e **COMPORTAMENTO**. O estado de um objeto revela seus dados  importantes. Por exemplo, uma pessoa tem: idade, peso, altura, cor de cabelo, cor da pele. Já o comportamento são as ações que aquele objeto pode exercer ou executar. Por exemplo, uma pessoa pode: andar, falar, ouvir, pular.
+
+Esses objetos podem ser tanto objetos concretos (carro, livro, nota fiscal), quanto conceitos abstratos (conta corrente, venda, pessoa jurídica).
+
+Na Orientação a Objetos, os objetos do mundo real são modelados e representados no mundo computacional, ou seja, dentro do sistema, por meio de objetos de software. 
+
+Os objetos de software, assim como os objetos do mundo real, também possuem estado e comportamento.
+
+Por definição: Um objeto é um pedaço de software que possui atributos (estado) e métodos (comportamento).
+
+== Classes
+
+Uma classe é a representação de um conjunto de objetos que compartilham a mesma estrutura de atributos, operações e relacionamentos.
+
+IMPORTANT: Representa um conjunto de objetos com características semelhantes. 
+
+É um modelo que define atributos (estado) e métodos (comportamento) comuns a todos os objetos do mesmo tipo.
+
+.Fonte: (MELO, 2004)
+image::classe.png[]
+
+NOTE: Esses atributos identificam o estado de um objeto.
+
+Os atributos representam, portanto, as características presentes nos objetos observados.
+
+Atributos são elementos que diferenciam objetos presentes em uma mesma classe, representados por dados ou informações do estado.
+
+.Fonte: (MELO, 2004)
+image::atributos.png[]
+
+Além dos atributos, os objetos possuem métodos que modificam seu estado ou prestam serviços a outros objetos. 
+
+Um método é uma sub-rotina que é executada ao ser efetuada uma chamada. 
+
+NOTE: Os métodos determinam o comportamento dos objetos de uma classe e são análogos a funções ou procedimentos da programação estruturada.
+
+Métodos podem ou não retornar valores, e podem ou não receber parâmetros.
+
+.Fonte: (MELO, 2004)
+image::operacoes.png[]
+
+Uma classe pode ter qualquer número de atributos ou mesmo nenhum atributo. Da mesma forma, pode ter qualquer número de operações ou mesmo nenhuma operação.
+
+.Fonte: (MELO, 2004)
+image::classe-objeto.png[]
+
+image::classe2.png[]
+
+== Criando Classes e Objetos com Java
+
+A classe é a estrutura fundamental na Programação Orientada a Objetos. Ela pode ser pensada como um molde para a construção de um objeto.
+
+NOTE: Um objeto é uma instância de uma classe.
+
+Ao escrever um programa de computador em uma linguagem
+orientada a objetos, você está criando um modelo de alguma parte do mundo.
+
+Considere que, ao modelar um sistema de vendas. Um tipo
+de entidade para lidar são os clientes.
+
+O que é um cliente em nosso contexto: uma classe ou
+objeto?
+
+Algumas perguntas podem nos ajudar: Qual o nome do cliente? Qual seu cpf? Qual seu endereco?
+
+Para responder essas perguntas temos que nos referir a um
+cliente específico.
+
+Nesse contexto o cliente é uma classe, pois estamos falando de clientes em geral, não de um cliente em particular.
+
+Se respondo, o nome do cliente é Pedro, cpf: 111.111.111-11, 104 norte al. 04, estou me referindo a um cliente em particular.
+
+Nos referimos a um objeto particular como uma instância. 
+Instância é, de modo geral, sinônimo de Objeto.
+
+=== Definindo classes
+
+Antes de escrever sua classe, pense em um nome apropriado
+para a sua classe e liste todas os atributos e métodos que serão usados para a classe.
+
+Para definir uma classe, escrevemos:
+
+.Estrutura de uma classe
+[source, java]
+----
+public class <nome> {
+
+    //atributos
+
+    //métodos
+
+}
+----
+
+Lembre-se de que, para a declaração da classe, o único modificador de acesso válido é o public. De uso exclusivo para a classe que possuir o mesmo nome do arquivo externo.
+
+Pense em nomes apropriados para a sua classe.
+
+IMPORTANT: Os nomes de classes devem ser iniciadas por letra MAIÚSCULA.
+
+IMPORTANT: O nome do arquivo de sua classe obrigatoriamente possui o mesmo nome da sua classe pública.
+
+.Estrutura de uma classe
+[source, java]
+----
+public class Cliente{
+  
+    //atributos
+   
+    //métodos
+
+}
+----
+
+==== Declarando atributos
+
+Para declarar um atributo para a nossa classe, escrevemos:
+
+.Declarando um atributo
+[source, java]
+----
+public class Cliente{
+    
+    //<modificador> <tipo> <nome>;
+    
+    //métodos
+
+}
+----
+
+Onde:
+
+- modificador: tipo de modificador do atributo
+- tipo: tipo de dados do atributo
+- nome: pode ser qualquer identificador válido
+
+Pontos importantes:
+
+1. Declare todos os atributos de objeto na parte superior da declaração da classe.
+1. Declare cada atributo em uma linha;
+1. Atributos de objeto, assim como qualquer outro atributo devem iniciar com letra MINÚSCULA;
+1. Use o tipo de dado apropriado para cada atributo declarado.
+
+.Declarando atributos
+[source, java]
+----
+public class Cliente{
+    
+    String nome;
+    String cpf;
+    Endereco endereco;
+    
+    //métodos
+
+}
+----
+
+==== Declarando métodos
+
+Para declararmos métodos, escrevemos:
+
+.Declarando um método
+[source, java]
+----
+public class <nome> {
+    
+    //atributos
+    
+    <modificador> <tipoRetorno> <nome>(<argumento>) {
+        <instruções>
+    }
+
+}
+----
+Onde:
+
+- modificador: pode ser utilizado qualquer modificador de acesso.
+- tipo: pode ser qualquer tipo de dado (incluindo void).
+- nome: pode ser qualquer identificador válido.
+- Argumento: argumentos recebidos pelo método.
+
+Pontos importantes:
+
+1. Nomes de métodos devem iniciar com letra MINÚSCULA;
+1. Nomes de métodos devem conter verbos;
+1. Sempre faça documentação antes da declaração do método. Use o estilo javadoc para isso.
+
+.Declarando atributos e métodos
+[source, java]
+----
+public class Cliente{
+    
+    String nome;
+    String cpf;
+    Endereco endereco;
+    
+    public void setNome(String nome){
+        this.nome = nome;
+    }
+    
+    public String getNome(){
+        return nome;
+    }
+
+}
+----
+
+==== Instância de Classe
+
+Para criar um objeto ou uma instância da classe, utilizamos o operador new.
+
+.Criando um objeto
+[source, java]
+----
+public class Principal{
+    public static void main(String args[]){
+    
+        //criando um objeto cliente
+        Cliente cliente1 = new Cliente();
+    
+    }
+}
+----
+
+O operador new aloca a memória para o objeto e retorna uma referência para essa alocação.
+
+.Criando um objeto
+[source, java]
+----
+public class Principal{
+    public static void main(String args[]){
+
+        //criando um objeto cliente
+        Cliente cliente1 = new Cliente();
+        
+        // Inserir dados ao objeto criado
+        cliente1.nome = “Pedro”;    
+        cliente1.cpf = “111.111.111-11”;
+        ...
+        
+        //chamando método de objeto
+        System.out.println(cliente1.getNome());
+    
+    }
+}
+----
+
+Para chamar um método a partir de um objeto, escrevemos o
+seguinte: `nomeDoObjeto.nomeDoMétodo([argumentos]);`
+
+== Referências
+
+- MELO, Ana Cristina. Desenvolvendo Aplicações com UML 2.0: do conceitual à implementação. 2a ed. – Rio de Janeiro: Brasport, 2004.
+
+- SBROCCO, José Henrique Teixeira de Carvalho. UML 2.3: teoria e prática. 1a ed. – São Paulo: Érica, 2011.
+
+- BARNES, David J. e KOLLING, Michael. Programação orientada a objetos com java: Uma introdução pratica usando o BlueJ. 4a Edição – São Paulo: Pearson Prentice Hall, 2009.
+
+- BARNES, David J.; Programação orientada a objetos com Java; Editora Pearson; São Paulo, 2009.
