@@ -27,7 +27,7 @@
 
 link:https://fagno.github.io/poo-java/[HOME]
 
-= Programação Orientada a Objetos
+= Programação Orientada a Objetos com Java
 Fagno Alves Fonseca <fagno.fonseca@ifto.edu.br>
 Mestre em Modelagem Computacional de Sistemas – UFT.
 

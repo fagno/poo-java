@@ -25,7 +25,7 @@
 :lang: pt-BR
 //3+| mesclar linha tabela
 
-= Programação Orientada a Objetos com Java
+= Programação Orientada a Objetos - POO
 
 Fagno Alves Fonseca <fagno.fonseca@ifto.edu.br>
 Mestre em Modelagem Computacional de Sistemas – UFT.

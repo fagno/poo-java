@@ -25,10 +25,20 @@
 :lang: pt-BR
 //3+| mesclar linha tabela
 
-= Programação Orientada a Objetos com Java
+= Programação Orientada a Objetos
 
 Fagno Alves Fonseca <fagno.fonseca@ifto.edu.br>
 Mestre em Modelagem Computacional de Sistemas – UFT.
+
+== Técnicas de programação tradicionais
+
+As técnicas de programação tradicionais, leva o desenvolvedor a decompor o sistema em partes menores (funções), criando um emaranhado de inúmeras funções que chamam umas às outras.
+
+Geralmente não há separação de conceitos e responsabilidades, causando dependências enormes no sistema, dificultando futuras manutenções no código do programa.
+
+Não existe muito reaproveitamento de código, ao contrário, muitas vezes se tem muito código duplicado. 
+
+Porém, a analise e projeto estruturados, quando corretamente usados, melhoram muito a qualidade final dos softwares.
 
 == O que é POO?
 
@@ -44,7 +54,7 @@ Os sistemas são modelados como um conjunto de objetos que interagem entre si.
 
 Sugere a diminuição da distância entre modelagem computacional e o mundo real.
 
-Consiste em utilizar objetos computacionais para implementar as funcionalidades de um sistema.
+**POO** Consiste em utilizar objetos computacionais para implementar as funcionalidades de um sistema. Já **Análise orientada a objetos** Consiste em utilizar objetos computacionais para implementar as funcionalidades de um sistema. Já 
 
 === Abstração
 
@@ -75,10 +85,16 @@ Dentre as vantagens que a OO proporciona, podemos destacar:
 - maior flexibilidade do sistema;
 - facilidade na manutenção, dentre outras vantagens.
 
-A OO introduz e enfatiza os seguintes conceitos:
+=== A OO introduz e enfatiza os seguintes conceitos
 
 - Objeto
 - Classe
 - Encapsulamento
 - Herança
 - Polimorfismo
+
+== Referências
+
+- MELO, Ana Cristina. Desenvolvendo Aplicações com UML 2.0: do conceitual à implementação. 2ª ed. – Rio de Janeiro: Brasport, 2004.
+
+- SBROCCO, José Henrique Teixeira de Carvalho. UML 2.3: teoria e prática. 1ª ed. – São Paulo: Érica, 2011.
