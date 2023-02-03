@@ -67,7 +67,7 @@ Os sistemas são modelados como um conjunto de objetos que interagem entre si.
 
 Sugere a diminuição da distância entre modelagem computacional e o mundo real.
 
-**POO** Consiste em utilizar objetos computacionais para implementar as funcionalidades de um sistema. Já **Análise orientada a objetos** Consiste em utilizar objetos computacionais para implementar as funcionalidades de um sistema. Já 
+**POO** Consiste em utilizar objetos computacionais para implementar as funcionalidades de um sistema. Já **Análise orientada a objetos** Consiste em definir quais objetos fazem parte de um sistema e a maneira como se comportam.
 
 === Abstração
 
