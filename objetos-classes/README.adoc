@@ -1,15 +1,14 @@
+:icons: font
+:allow-uri-read:
 //caminho padrão para imagens
 :imagesdir: images
+:numbered:
 :figure-caption: Figura
 :doctype: book
 
 //gera apresentacao
 //pode se baixar os arquivos e add no diretório
 :revealjsdir: https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0
-
-//GERAR ARQUIVOS
-//make slides
-//make ebook
 
 //Estilo do Sumário
 :toc2: 
@@ -25,6 +24,18 @@
 :lang: pt-BR
 //3+| mesclar linha tabela
 
+ifdef::env-github[:outfilesuffix: .adoc]
+
+ifdef::env-github,env-browser[]
+// Exibe ícones para os blocos como NOTE e IMPORTANT no GitHub
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+
 link:https://fagno.github.io/poo-java/[HOME]
 
 = Programação Orientada a Objetos
@@ -37,7 +48,7 @@ Mestre em Modelagem Computacional de Sistemas – UFT.
 Objetos são a chave para se compreender a tecnologia orientada a objetos. Você olha ao seu redor e tudo o que vê são objetos: carro, mesa, janela, livro, pessoa, etc.
 
 .Fonte: (MELO, 2004).
-image::objetos.png[]
+image::objetos.png[width=400,height=300]
 
 Objetos possuem características próprias, as quais permitem categorizá-los e descrevê-los.
 
