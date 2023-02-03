@@ -43,10 +43,10 @@ Mestre em Modelagem Computacional de Sistemas – UFT.
 
 1. link:ambiente-desenvolvimento/[Ambiente de Desenvolvimento]
 1. link:introducao/[Introdução]
-1. link:introducao/[Objeto e Classe]
-1. link:spring/[Relacionamento entre Classes]
-1. link:jpa/[Herança e Classes abstratas]
-1. link:validacao/[Encapsulamento]
-1. link:security/[Interface]
+1. link:objetos&classes/[Objeto e Classe]
+1. link:relacionamento/[Relacionamento entre Classes]
+1. link:heranca/[Herança e Classes abstratas]
+1. link:encapsulamento/[Encapsulamento]
+1. link:interface/[Interface]
 
 IMPORTANT: MATERIAL EM CONSTRUÇÃO
