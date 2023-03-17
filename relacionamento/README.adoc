@@ -1,0 +1,214 @@
+:icons: font
+:allow-uri-read:
+//caminho padrão para imagens
+:imagesdir: ../images
+:numbered:
+:figure-caption: Figura
+:doctype: book
+
+//gera apresentacao
+//pode se baixar os arquivos e add no diretório
+:revealjsdir: https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0
+
+//Estilo do Sumário
+:toc2: 
+//após os : insere o texto que deseja ser visível
+:toc-title: Sumário
+:figure-caption: Figura
+//numerar titulos
+:numbered:
+:source-highlighter: highlightjs
+:icons: font
+:chapter-label:
+:doctype: book
+:lang: pt-BR
+//3+| mesclar linha tabela
+
+ifdef::env-github[:outfilesuffix: .adoc]
+
+ifdef::env-github,env-browser[]
+// Exibe ícones para os blocos como NOTE e IMPORTANT no GitHub
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+
+link:https://fagno.github.io/poo-java/[HOME]
+
+= Programação Orientada a Objetos
+
+Fagno Alves Fonseca <fagno.fonseca@ifto.edu.br>
+Mestre em Modelagem Computacional de Sistemas – UFT.
+
+== Relacionamento entre classes
+
+Os relacionamentos possíveis entre classes são: associação (conectadas entre si), dependência (uma classe
+depende ou usa outra classe), generalização (uma classe é uma especialização de outra classe).
+
+
+.Representação UML
+image::relacionamentos-uml.png[]
+
+== Associações entre classes
+
+Uma Associação define que uma classe faz parte da estrutura de outra classe.
+
+Na notação UML é representada por uma linha conectando as classes.
+
+.Associação entre classes
+image::associacao.png[]
+
+As associações possuem:
+
+- Nome: descrição dada ao relacionamento;
+
+- Navegabilidade: define o aspecto de visibilidade entre as classes;
+
+- Formas de navegação: Unidirecional e Bidirecional.
+
+- Multiplicidade: define a quantidade de objetos/instâncias que um
+
+- lado da associação pode ter em relação a outra classe.
+
+- Papéis: define o papel desepenhado no relacionamento.
+
+=== Navegabilidade
+
+Define o aspecto de visibilidade entre as classes. Formas de navegação: Unidirecional e Bidirecional.
+
+Se uma classe A enxerga uma classe B, então A é navegável para B. Desta forma, a classe A contém um atributo da classe B.
+
+Unidirecional: somente uma classe enxerga a outra, representada por uma seta conforme figura a seguir:
+
+Exemplo 1 (Unidirecional): A classe A contém um atributo da classe B. Já a classe B não possui atributo da classe A.
+
+[[fig:unidirecional-1]]
+.navegabilidade unidirecional
+image::nav-unidirecional.png[width=300,height=200]
+
+.exemplo figura <<fig:unidirecional-1>>
+[source, java]
+----
+public class Pessoa{
+
+    Endereco enderecos;
+
+    //métodos
+
+}
+
+public class Endereco{
+
+    //métodos
+
+    //métodos
+
+}
+----
+
+Exemplo 2 (Unidirecional): A classe B contém um atributo da classe A. Já a classe A não possui atributo da classe B
+
+[[fig:unidirecional-2]]
+.navegabilidade unidirecional
+image::nav-unidirecional-2.png[width=300,height=200]
+
+.exemplo figura <<fig:unidirecional-2>>
+[source, java]
+----
+public class Produto{
+
+    //atributos
+
+    //métodos
+
+}
+
+public class Item{
+
+    Produto produto;
+
+    //métodos
+
+}
+----
+
+Bidirecional: ambas as classes se enxergam, representada por uma linha conforme figura a seguir:
+
+Exemplo 1 (Bidirecional): A classe A contém um atributo da classe B e a classe B contém um atributo da classe A.
+
+[[fig:bidirecional]]
+.navegabilidade bidirecional
+image::bidirecional.png[width=300,height=200]
+
+.exemplo figura <<fig:bidirecional>>
+[source, java]
+----
+public class Pessoa{
+
+    Endereco enderecos;
+
+    //métodos
+
+}
+
+public class Endereco{
+
+    Pessoa pessoa;
+
+    //métodos
+
+}
+----
+
+=== Multiplicidade
+
+Define a quantidade de objetos/instâncias que um lado da associação pode ter em relação a outra classe.
+
+A simbologia representa os limites inferior e superior da quantidade de objetos.
+
+.indicadores/simbologia de multiplicidade
+image::multiplicidade.png[]
+
+Representado pela simbologia próxima as associações, conforme Figura a seguir.
+
+[[fig:multiplicidade]]
+.multiplicidade
+image::multiplicidade-classe.png[width=300,height=200]
+
+A leitura do exemplo acima, descreve na multiplicidade que apenas 1 instância da classe B deverá ser criada na classe A. Já a classe B deverá ter várias instâncias da classe A.
+
+Por possuir “várias” instâncias, a classe B deve possuir uma lista de
+valores da classe requerida.
+
+NOTE: O exemplo acima define uma navegabilidade bidirecional.
+
+.exemplo figura <<fig:multiplicidade>>
+[source, java]
+----
+public class Item{
+
+    Venda venda;
+
+    //métodos
+
+}
+
+public class Venda{
+
+    List<Item> itens;
+
+    //métodos
+
+}
+----
+
+
+
+== Referências
+
+• MELO, Ana Cristina. Desenvolvendo Aplicações com UML 2.0: do conceitual à implementação. 2a ed. – Rio de Janeiro: Brasport, 2004.
+
+• SBROCCO, José Henrique Teixeira de Carvalho. UML 2.3: teoria e prática. 1a ed. – São Paulo: Érica, 2011.
