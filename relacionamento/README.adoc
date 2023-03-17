@@ -69,11 +69,9 @@ As associações possuem:
 
 - Formas de navegação: Unidirecional e Bidirecional.
 
-- Multiplicidade: define a quantidade de objetos/instâncias que um
+- Multiplicidade: define a quantidade de objetos/instâncias que um lado da associação pode ter em relação a outra classe.
 
-- lado da associação pode ter em relação a outra classe.
-
-- Papéis: define o papel desepenhado no relacionamento.
+- Papéis: define o papel desempenhado no relacionamento.
 
 === Navegabilidade
 
