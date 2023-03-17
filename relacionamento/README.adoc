@@ -92,7 +92,7 @@ image::nav-unidirecional.png[width=300,height=200]
 ----
 public class Pessoa{
 
-    Endereco enderecos;
+    Endereco endereco;
 
     //métodos
 
@@ -146,7 +146,7 @@ image::bidirecional.png[width=300,height=200]
 ----
 public class Pessoa{
 
-    Endereco enderecos;
+    Endereco endereco;
 
     //métodos
 
