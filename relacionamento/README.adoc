@@ -203,10 +203,139 @@ public class Venda{
 }
 ----
 
+== Collection
 
+Existem vários tipos diferentes de Collections disponíveis na API de Collections do Java, cada uma com diferentes características e métodos específicos. Algumas das principais interfaces de Collection incluem: Set, Queue (filas), List (listas) e Map, que formam a base das coleções genéricas da linguagem Java.
+
+Em geral as Collections são estruturas dinâmicas, ou seja, podem crescer conforme a necessidade de expansão.
+
+- **Set**: define uma coleção que não contém valores duplicados.
+
+- **Queue**: define uma coleção que representa uma fila, ou seja, implementa o modelo FIFO (First-In, First-Out)
+
+- **List**: define uma coleção ordenada que pode conter elementos duplicados.
+
+- **Map**: define uma coleção coleção de pares chave-valor, em que cada chave é associada a um valor e não permite chaves duplicadas.
+
+O conjunto de interfaces e classes concretas que fazem parte da API Collection é apresentada na figura a seguir.
+
+[[fig:xollections]]
+.Collections
+image::collections.png[width=600,height=600]
+
+=== ArrayList
+
+A classe ArrayList é uma das implementações da interface List na API de Collections do Java. Ela é uma estrutura de dados que armazena uma lista de elementos em ordem sequencial, onde cada elemento é acessado por um índice numérico.
+
+Fornecem métodos eficientes que organizam, armazenam recuperam seus dados sem que seja necessário conhecer como os dados são armazenados.
+
+ArrayList<T> (pacote java.util) pode alterar dinamicamente seu tamanho para acomodar mais elementos.
+
+T é um espaço reservador para o tipo de elemento armazenado na coleção.
+
+Isso é semelhante a especificar o tipo ao declarar um array, exceto que apenas tipos não primitivos podem ser utilizados com essas classes de coleção.
+
+==== Métodos da classe ArrayList
+
+NOTE: Índices de coleção iniciam em zero.
+
+O método **add()** adiciona elementos ao ArrayList.
+
+- A versão de um argumento acrescenta seu argumento ao final do ArrayList.
+
+- A versão de dois argumentos insere um novo elemento na posição especificada.
+
+
+O método **size()** retorna o número de elementos no ArrayList.
+
+O método **get()** obtém o elemento em um índice especificado.
+
+O método **remove()** exclui um elemento com um valor específico. Uma versão sobrecarregada do método remove o elemento no índice especificado.
+
+O método **contains()** determina se um item está no ArrayList.
+
+.definindo uma lista com a classe ArrayList
+[source, java]
+----
+public class Exemplo{
+
+    public static void main(String args[]){
+
+        //cria uma lista de Strings usando a classe ArrayList
+        ArrayList<String> frutas = new ArrayList();
+
+        //adiciona elementos na lista
+        frutas.add("Maçã");
+        frutas.add("Uva");
+
+        //imprimir dados da lista
+        for(int i=0;i<frutas.size();i++)
+            System.out.println(frutas.get(i));
+
+        //remove item da posição zero da lista
+        frutas.remove(0);
+
+        //exibe o número de elementos da lista
+        System.out.println(frutas.size());
+
+    }
+
+}
+----
+
+==== Instrução `for` aprimorada (for each)
+
+Para iterar sobre uma coleção de elementos, como um array ou uma lista. O for each simplifica o processo de iterar sobre a coleção, tornando o código mais fácil de ler e escrever.
+
+.sintaxe for each
+[source, java]
+----
+for (tipo elemento : coleção) {
+    // código a ser executado para cada elemento
+}
+----
+
+Onde "tipo" é o tipo de dado dos elementos na coleção e "coleção" é a coleção a ser iterada. 
+
+Vamos alterar o exemplo anterior, utilizando for each.
+
+.for each
+[source, java]
+----
+
+...
+//imprimir dados da lista
+for(String fruta : frutas)
+    System.out.println(fruta));
+...
+----
+
+Neste exemplo, o for each percorre todos os elementos no array `frutas` e os imprime na saída padrão.
+
+=== List
+
+A interface List é uma das interfaces mais importantes na API de Collections do Java. Ela é utilizada para representar uma lista ordenada de elementos que podem ser acessados por um índice numérico.
+
+A interface List é implementada por várias classes de coleções em Java, como ArrayList, LinkedList e Vector. Essas classes oferecem diferentes implementações da interface List com diferentes características, como eficiência na adição e remoção de elementos, consumo de memória, velocidade de acesso e assim por diante.
+
+Uma boa prática é usar a interface List na declaração de uma lista em vez de uma classe de implementação específica, como fizemos no exemplo anterior com ArrayList. Utilizar a interface List na declaração é mais flexível e permite que você use diferentes implementações da lista de acordo com suas necessidades específicas.
+
+Por exemplo, se você declarar uma lista com ArrayList, está limitando o uso da mesma apenas a classe ArrayList. Se você precisar mudar para uma implementação diferente da lista no futuro, terá que alterar todas as referências a ArrayList no seu código. No entanto, se você declarar a variável como List, pode facilmente alterar a implementação da lista para outra classe que implementa a interface List, como LinkedList, sem afetar o restante do código.
+
+.definindo uma lista com a interface List
+[source, java]
+----
+
+...
+//declara uma lista usando a interface List, podendo ser construída usando qualquer classe que implementa a interface List
+List<String> frutas = new ArrayList();
+...
 
 == Referências
 
-• MELO, Ana Cristina. Desenvolvendo Aplicações com UML 2.0: do conceitual à implementação. 2a ed. – Rio de Janeiro: Brasport, 2004.
+- MELO, Ana Cristina. Desenvolvendo Aplicações com UML 2.0: do conceitual à implementação. 2a ed. – Rio de Janeiro: Brasport, 2004.
 
-• SBROCCO, José Henrique Teixeira de Carvalho. UML 2.3: teoria e prática. 1a ed. – São Paulo: Érica, 2011.
+- SBROCCO, José Henrique Teixeira de Carvalho. UML 2.3: teoria e prática. 1a ed. – São Paulo: Érica, 2011.
+
+- Harvey M. Deitel. Java: como programar. 8a ed. Prentice Hall
+Brasil, 2010.
