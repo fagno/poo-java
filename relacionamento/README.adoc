@@ -302,7 +302,6 @@ Vamos alterar o exemplo anterior, utilizando for each.
 .for each
 [source, java]
 ----
-
 ...
 //imprimir dados da lista
 for(String fruta : frutas)
@@ -325,11 +324,11 @@ Por exemplo, se você declarar uma lista com ArrayList, está limitando o uso da
 .definindo uma lista com a interface List
 [source, java]
 ----
-
 ...
 //declara uma lista usando a interface List, podendo ser construída usando qualquer classe que implementa a interface List
 List<String> frutas = new ArrayList();
 ...
+----
 
 == Referências
 
