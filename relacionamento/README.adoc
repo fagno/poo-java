@@ -221,7 +221,7 @@ O conjunto de interfaces e classes concretas que fazem parte da API Collection Ã
 
 [[fig:xollections]]
 .Collections
-image::collections.png[width=600,height=600]
+image::collections.png[width=900,height=900]
 
 === ArrayList
 
