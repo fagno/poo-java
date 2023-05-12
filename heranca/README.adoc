@@ -1,0 +1,258 @@
+:icons: font
+:allow-uri-read:
+//caminho padrão para imagens
+:imagesdir: ../images
+:numbered:
+:figure-caption: Figura
+:doctype: book
+
+//gera apresentacao
+//pode se baixar os arquivos e add no diretório
+:revealjsdir: https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0
+
+//Estilo do Sumário
+:toc2: 
+//após os : insere o texto que deseja ser visível
+:toc-title: Sumário
+:figure-caption: Figura
+//numerar titulos
+:numbered:
+:source-highlighter: highlightjs
+:icons: font
+:chapter-label:
+:doctype: book
+:lang: pt-BR
+//3+| mesclar linha tabela
+
+ifdef::env-github[:outfilesuffix: .adoc]
+
+ifdef::env-github,env-browser[]
+// Exibe ícones para os blocos como NOTE e IMPORTANT no GitHub
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+
+link:https://fagno.github.io/poo-java/[HOME]
+
+= Programação Orientada a Objetos
+
+Fagno Alves Fonseca <fagno.fonseca@ifto.edu.br>
+Mestre em Modelagem Computacional de Sistemas – UFT.
+
+== Herança
+
+Em nossa vida convivemos com o conceito de Herança na biologia. Se observar sua árvore genealógica vai entender por que algumas vezes as pessoas falam: "ele(a) é a sua cara". 
+
+No nascimento de um bebê, todos ficam ansiosos para ver a carinha do recém-chegado, à espera de um traço que marque sua continuidade no mundo.
+
+A verdade, porém, é que ter queixo, cor do cabelo e formato dos olhos parecidos é resultado da herança biológica carregada no DNA dos filhos que, nem sempre, puxam o pai ou a mãe, mas membros de toda uma família.
+
+Os conceitos de herança também são aplicados na POO, mas com algumas diferenças. No mundo real um filho(a) tem um pai e uma mãe, ou seja, herança múltipla. Em POO, a maioria das linguagens orientadas a objetos, uma classe filha só pode ter mãe, ou seja, herança simples.
+
+Classes diferentes podem ter características comuns, ou seja, ao invés de criarmos uma nova classe com todas essas características usamos as características de uma classe já existente.
+
+A herança é um princípio da POO que permite criar novas classes a partir de classes existentes.
+
+Essas novas classes são denominadas de subclasses, ou classes derivadas. As classes já existentes, que deram origem às subclasses, são chamadas de superclasses.
+
+Uma das grandes vantagens de usar o recurso da herança é na reutilização do código. Esse reaproveitamento pode ser acionado quando se identifica que o atributo ou método de uma
+classe será igual para as outras.
+
+Obviamente, você só vai criar uma herança entre classes se estas tiverem uma relação.
+
+Herança é "uma classe (classe filha) que tem os mesmos atributos e comportamentos de outra classe (classe mãe), mais alguns distintos".
+
+Existe uma pergunta simples para verificar se a relação entre uma classe B e uma classe A é de herança. Basta fazer a seguinte pergunta a si mesmo:
+
+"A classe B é uma classe A?".
+
+Exemplo:
+
+Uma Pessoa Física é uma Pessoa? SIM – pode-se usar Herança.
+
+Uma Carro é um Automóvel? SIM – pode-se usar Herança..
+
+Um Cliente é um Automóvel? NÃO – não se pode usar Herança.
+
+A herança contribui para a extensão e reuso de funcionalidades, ou seja, ela captura o que é comum e o isola daquilo que é diferente.
+
+Modela aspectos semelhantes entre classes, preservando suas diferenças.
+
+Uma classe derivada geralmente é uma implementação especifica de um caso mais geral. A classe derivada deve apenas definir as características que a tornam única.
+
+No exemplo a seguir, a classe Cliente é uma classe generalizada das classes filhas "Pessoa Física" e "Pessoa jurídica".
+
+Suponha o seguinte exemplo a seguir:
+
+[[fig:heranca1]]
+.Exemplo Herença
+image::heranca1.png[] 
+//[width=300,height=200]
+// .exemplo figura <<fig:unidirecional>>
+
+Neste exemplo, as duas classes podem ser entendidas como uma Pessoa, mas cada uma com características que a tornam única.
+
+Para herdar uma classe usamos a palavra-chave `extends`.
+
+[source, java]
+----
+public abstract class Pessoa {
+    Endereco endereco;
+    String telefone;
+}
+
+public class PessoaFisica extends Pessoa {
+    String nome;
+    String cpf;
+}
+
+public class PessoaJuridica extends Pessoa {
+    String nomeFantasia;
+    String razaoSocial;
+    String cnpj;
+}
+----
+
+Criando uma instância de PessoaFisica e PessoaJuridica.
+
+
+[source, java]
+----
+public class Principal {
+    public static void main(String args[]) {
+        
+        ...
+
+        PessoaFisica pf = new PessoaFisica();
+        pf.nome = “Fulano”;
+        pf.telefone = “(00) 00000-0000”;
+        pf.endereco = end1;
+
+        PessoaJuridica pj = new PessoaJuridica();
+        pj.nomeFantasia = “Empresa SS Sistemas”;
+        pj.razaoSocial = “R S S Sistemas LTDA”;
+        pj.telefone = “(99) 99999-9999”;
+        pj.endereco = end2;
+        
+        System.out.println(pf.nome);
+        
+        System.out.println(pj.nomeFantasia);
+
+    }
+}
+----
+
+No próximo exemplo a seguir, a classe Conta é uma classe generalizada das classes filhas "ContaCorrente" e "ContaPoupanca".
+
+[[fig:heranca2]]
+.Exemplo Herença
+image::heranca2.png[] 
+
+Neste exemplo, as duas classes podem ser entendidas como uma Conta, mas cada uma com características que a tornam única.
+
+Assim como no exemplo anterior, utilizamos a palavra-chave `extends`.
+
+[source, java]
+----
+public class Conta {
+    int numero;
+    double saldo;
+}
+
+public class ContaCorrente extends Conta {
+    double limite;
+}
+
+public class ContaPoupanca extends Conta {
+    double rendimento;
+}
+----
+
+Quando uma classe é criada como sub-classe de outra classe, a palavra-chave super é usada para que a sub-classe possa acessar métodos public ou protected (mas não private) da superclasse.
+
+Exemplo:
+
+
+[source, java]
+----
+    ...
+    super.<method_name>(<argumentos>);
+    ...
+----
+
+A palavra-chave super também é usada para invocar o construtor da superclasse, a partir de um construtor da subclasse.
+
+Exemplo:
+
+[source, java]
+----
+public Subclasse(<argumentos>){
+    super(<argumentos>); //construtor da Superclasse
+}
+----
+
+=== Override de Métodos
+
+Se, por alguma razão, uma classe derivada necessita que a implementação de algum método seja diferente da superclasse, o polimorfismo por override pode vir a ser muito útil. Uma subclasse pode modificar um método definido em sua superclasse fornecendo uma nova implementação para aquele método.
+
+[[fig:heranca3]]
+.Override
+image::heranca3.png[] 
+
+
+[source, java]
+----
+public class Pessoa {
+    public String dados(){
+        return endereco.logradouro + telefone;  
+    }
+}
+
+public class PessoaFisica extends Pessoa {  
+    public String dados(){
+        return super.dados()+”, ”+cpf;
+    }
+}
+
+public class PessoaJuridica extends Pessoa {
+    public String dados(){
+        return super.dados()+”, ”+cnpj;
+    }
+}
+----
+
+=== Métodos final e Classes final
+
+Podemos declarar classes que não permitem a herança. Estas classes são chamadas classes finais. Para definir que uma classe seja final, adicionamos a palavra-chave final na declaração da classe (na posição do modificador). Por exemplo:
+
+
+[source, java]
+----
+
+public final class Pessoa {
+    // código
+}
+
+----
+
+Também é possível criar métodos que não possam ser modificados pelos filhos, impedindo o polimorfismo por override. Estes métodos são o que chamamos de métodos finais. Para declarar um método final, adicionamos a palavra-chave final na declaração do método (na posição do modificador). Por exemplo:
+
+
+[source, java]
+----
+...
+public final String dados(){
+    //código
+}
+...
+----
+
+== Referências
+
+- BARNES, David J. e KOLLING, Michael. Programação orientada a objetos com java: Uma introdução pratica usando o BlueJ. 4a Edição – São Paulo: Pearson Prentice Hall, 2009.
+
+- MELO, Ana Cristina. Desenvolvendo Aplicações com UML 2.0: do conceitual à implementação. 2a ed. – Rio de Janeiro: Brasport, 2004.
