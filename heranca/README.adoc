@@ -225,6 +225,58 @@ public class PessoaJuridica extends Pessoa {
 }
 ----
 
+=== Classes Abstratas
+
+Para criar métodos em classes devemos, necessariamente, saber qual o seu comportamento. Entretanto, em muitos casos não sabemos como estes métodos se comportarão na classe que estamos criando, e, por mera questão de padronização, desejamos que as classes que herdem desta classe possuam, obrigatoriamente, estes métodos.
+
+Uma classe abstrata é uma classe que possui métodos não abstratos (métodos com implementações) e métodos abstratos (métodos sem implementações).
+
+[source, java]
+----
+public abstract class Pessoa{ ... }
+----
+
+Para criar um método abstrato, apenas escreva a assinatura
+do método sem o corpo e use a palavra-chave abstract. Por
+exemplo:
+
+[source, java]
+----
+...
+public abstract String dados();
+...
+----
+
+Os métodos abstratos estão presentes somente em classes abstratas. 
+
+Uma classe abstrata é uma classe que não pode gerar um objeto. Frequentemente aparece no topo de uma hierarquia de classes no modelo de programação orientada a objetos.
+
+Ela é uma classe que apenas idealiza um tipo, define apenas um rascunho. Em nosso exemplo não é viável que um objeto seja apenas do tipo Pessoa
+
+[[fig:heranca3]]
+.Classe Abstrata
+image::heranca4.png[] 
+
+Use classes abstratas para definir muitos tipos de comportamentos no topo de uma hierarquia de classes. Pode-se dizer que as classes abstratas servem como “modelo” para outras classes que dela herdem.
+
+Use suas subclasses para prover detalhes de implementação da classe abstrata.
+
+Quando uma classe estende uma classe abstrata, ela é obrigada a implementar todos os métodos abstratos existentes na superclasse.
+
+A funcionalidade dos métodos abstratos que são herdados pelas classes filha normalmente é atribuída de acordo com o objetivo ou o propósito dessas classes
+
+Quando um subclasse faz a implementação do método abstrasto usamos uma annotation conhecida como @Override, significando que estamos sobrescrevendo o método da superclasse. 
+
+[source,java]
+----
+@Override
+public String dados() {
+    //código
+}
+----
+
+Entende-se em que nas classes abstratas os métodos que são abstratos têm um comportamento diferente nas suas subclasses, por isso não possuem corpo. Ou seja, as subclasses que estão herdando precisam desse método de modo que permitam inserir as particularidades de cada subclasse e não de forma genérica.
+
 === Métodos final e Classes final
 
 Podemos declarar classes que não permitem a herança. Estas classes são chamadas classes finais. Para definir que uma classe seja final, adicionamos a palavra-chave final na declaração da classe (na posição do modificador). Por exemplo:
