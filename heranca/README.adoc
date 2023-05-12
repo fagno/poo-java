@@ -195,6 +195,69 @@ public Subclasse(<argumentos>){
 }
 ----
 
+=== Métodos Construtores
+
+Ao criar um objeto, invoca-se, na realidade, o construtor da classe.
+
+O construtor é um método onde todas as inicializações do objeto são declaradas e possui o mesmo nome da classe. 
+
+Características de um construtor:
+
+- Possuem o mesmo nome da classe;
+
+- São executados automaticamente na utilização do operador new durante a instanciação da classe;
+
+- Não retornam valor.
+
+Construtor é um método, entretanto, somente as seguintes informações podem ser colocadas no cabeçalho do construtor:
+
+- Modificador de acesso;
+
+- Nome do construtor;
+
+- Argumentos, caso necessário.
+
+Para declarar um construtor:
+
+[source, java]
+----
+[modificador] <nomeClasse> (<argumento>) {
+    //instruções;
+}
+----
+
+[source, java]
+----
+//Exemplo de um construtor da classe Pessoa:
+public class Pessoa {
+    private String nome;
+    private int idade;
+
+    //método construtor
+    public Pessoa(){
+        System.out.println("Objeto criado!");
+    }
+}
+----
+
+==== Construtor Padrão (default)
+
+Toda classe tem o seu construtor padrão. 
+
+O construtor padrão é um construtor público e sem argumentos.
+
+Se não for definido um construtor para a classe, então, implicitamente, é assumido um construtor padrão.
+
+No entanto, se você definir um construtor para a classe, que não seja o construtor padrão, por exemplo, um construtor com parâmetro, o construtor padrão deixa de existir. 
+
+Construtores também podem sofrer `overloading` de métodos.
+
+Podemos necessitar criar métodos que tenham os mesmos nomes, mas que funcionem de maneira diferente dependendo dos argumentos que informamos. Esta capacidade é chamada de overloading de métodos.
+
+Overloading de métodos permite que um método com o mesmo nome, entretanto com diferentes argumentos, possa ter implementações diferentes e retornar valores de diferentes tipos.
+
+Ao invés de inventar novos nomes todas as vezes, o overloading de métodos pode ser utilizado quando a mesma operação tem implementações diferentes.
+
 === Override de Métodos
 
 Se, por alguma razão, uma classe derivada necessita que a implementação de algum método seja diferente da superclasse, o polimorfismo por override pode vir a ser muito útil. Uma subclasse pode modificar um método definido em sua superclasse fornecendo uma nova implementação para aquele método.
@@ -277,7 +340,7 @@ public String dados() {
 
 Entende-se em que nas classes abstratas os métodos que são abstratos têm um comportamento diferente nas suas subclasses, por isso não possuem corpo. Ou seja, as subclasses que estão herdando precisam desse método de modo que permitam inserir as particularidades de cada subclasse e não de forma genérica.
 
-=== Métodos final e Classes final
+=== Método final e Classe final
 
 Podemos declarar classes que não permitem a herança. Estas classes são chamadas classes finais. Para definir que uma classe seja final, adicionamos a palavra-chave final na declaração da classe (na posição do modificador). Por exemplo:
 
@@ -306,5 +369,7 @@ public final String dados(){
 == Referências
 
 - BARNES, David J. e KOLLING, Michael. Programação orientada a objetos com java: Uma introdução pratica usando o BlueJ. 4a Edição – São Paulo: Pearson Prentice Hall, 2009.
+
+- BARNES, David J.; Programação orientada a objetos com Java; Editora Pearson; São Paulo, 2009.
 
 - MELO, Ana Cristina. Desenvolvendo Aplicações com UML 2.0: do conceitual à implementação. 2a ed. – Rio de Janeiro: Brasport, 2004.
