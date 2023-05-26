@@ -376,6 +376,8 @@ Polimorfismo também permite que duas ou mais classes derivadas de uma mesma sup
 
 No polimorfismo, é necessário que os métodos tenham exatamente a mesma identificação, sendo utilizado o mecanismo de redefinição de métodos. Esse mecanismo de redefinição não deve ser confundido com o mecanismo de sobrecarga de métodos.
 
+O polimorfismo pode ser aplicado de diferentes maneiras:
+
 - **Sobrescrita de método (override):** uma classe filha sobrescreve um método da superclasse para alterar ou estender seu comportamento. Isso permite que o objeto da classe filha seja tratado como um objeto da classe pai, mas execute o comportamento específico da classe filha.
 
 - **Sobrecarga de método (overloading):** permite definir várias versões de um método com o mesmo nome em uma classe, mas com parâmetros diferentes. Isso permite que diferentes formas de chamada do método sejam suportadas e o método apropriado seja escolhido com base nos argumentos fornecidos.
