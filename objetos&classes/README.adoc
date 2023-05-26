@@ -181,7 +181,7 @@ public class Cliente{
 }
 ----
 
-==== Declarando atributos
+=== Atributos de Objeto
 
 Para declarar um atributo para a nossa classe, escrevemos:
 
@@ -224,7 +224,7 @@ public class Cliente{
 }
 ----
 
-==== Declarando métodos
+=== Métodos de Objeto
 
 Para declararmos métodos, escrevemos:
 
@@ -274,7 +274,79 @@ public class Cliente{
 }
 ----
 
-==== Instância de Classe
+=== Atributos de Classe
+
+Além das atributos de objeto, podemos também declarar atributos de classe ou atributos que pertençam à classe como um todo.
+
+O valor destes atributos é o mesmo para todos os objetos da mesma classe. 
+
+Também são chamados de atributos estáticos.
+
+Para declarar um atributo estático:
+
+[source, java]
+----
+<modificador> static <tipo> <nome>;
+----
+
+Usamos a palavra-chave `static` para indicar que é um atributo estático.
+
+Para melhor descrever os atributos de classe, vamos discutir a classe Pessoa a seguir.
+
+
+[source, java]
+----
+public class Pessoa{
+    
+    String nome;
+    int idade;
+    static int pessoaCount=0;
+    
+    Pessoa(){
+        pessoaCount++;
+    }
+
+}
+----
+
+O atributo `pessoaCount` é incrementado quando um nova instância de pessoa é criada.
+
+=== Métodos de Classe
+
+Além das métodos de objeto, podemos também declarar métodos de classe.
+
+Métodos estáticos são métodos que podem ser invocados sem que um objeto tenha sido instanciado pela classe.
+
+Métodos estáticos pertencem a classe como um todo e não ao objeto da classe.
+
+Para declarar um método estático:
+
+[source, java]
+----
+<modificador> static <tipoRetorno> <nome>(<argumento>) {
+    <instruções>
+}
+----
+
+Para chamar um método estático, digite:
+
+[source, java]
+----
+NomeClasse.nomeMétodoEstático(argumentos);
+----
+
+Para o atributo estático studentCount, podemos criar um método estático para obter o seu conteúdo.
+
+[source, java]
+----
+...
+public static int getPessoaCount() {
+    return pessoaCount;
+}
+...
+----
+
+=== Instância de Classe
 
 Para criar um objeto ou uma instância da classe, utilizamos o operador new.
 

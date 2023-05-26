@@ -366,6 +366,23 @@ public final String dados(){
 ...
 ----
 
+=== Polimorfismo
+
+O polimorfismo é um dos princípios fundamentais da programação orientada a objetos e peermite que um objeto possa assumir várias formas ou ter múltiplos comportamentos.
+
+O polimorfismo permite tratar objetos de diferentes classes de forma uniforme, desde que essas classes compartilhem uma relação de herança ou implementem uma mesma interface. Isso significa que um objeto de uma classe mais específica pode ser tratado como um objeto de uma classe mais genérica, possibilitando o uso de métodos e propriedades comuns a todas as classes relacionadas.
+
+Polimorfismo também permite que duas ou mais classes derivadas de uma mesma superclasse possam invocar métodos que têm a mesma identificação (assinatura) mas comportamentos distintos, especializados para cada subclasse, tendo uma referência a um objeto do tipo da superclasse. A decisão sobre qual o método que deve ser selecionado, de acordo com o tipo da classe derivada, é tomada em tempo de execução, através do mecanismo de ligação tardia.
+
+No polimorfismo, é necessário que os métodos tenham exatamente a mesma identificação, sendo utilizado o mecanismo de redefinição de métodos. Esse mecanismo de redefinição não deve ser confundido com o mecanismo de sobrecarga de métodos.
+
+- **Sobrescrita de método (override):** uma classe filha sobrescreve um método da superclasse para alterar ou estender seu comportamento. Isso permite que o objeto da classe filha seja tratado como um objeto da classe pai, mas execute o comportamento específico da classe filha.
+
+- **Sobrecarga de método (overloading):** permite definir várias versões de um método com o mesmo nome em uma classe, mas com parâmetros diferentes. Isso permite que diferentes formas de chamada do método sejam suportadas e o método apropriado seja escolhido com base nos argumentos fornecidos.
+
+- **Interfaces:** uma interface define um conjunto de métodos que uma classe deve implementar. Várias classes podem implementar a mesma interface e serem tratadas como objetos dessa interface. Isso permite que objetos de diferentes classes sejam tratados de forma uniforme com base em sua conformidade com a interface.
+
+
 == Referências
 
 - BARNES, David J. e KOLLING, Michael. Programação orientada a objetos com java: Uma introdução pratica usando o BlueJ. 4a Edição – São Paulo: Pearson Prentice Hall, 2009.
