@@ -49,4 +49,4 @@ Mestre em Modelagem Computacional de Sistemas – UFT.
 1. link:encapsulamento/[Encapsulamento]
 1. link:interface/[Interface]
 
-IMPORTANT: MATERIAL EM CONSTRUÇÃO
+//IMPORTANT: MATERIAL EM CONSTRUÇÃO
